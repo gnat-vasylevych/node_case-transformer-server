@@ -4,7 +4,7 @@
 
 const http = require('http');
 const { validateUrl } = require('./validateUrl');
-const { createSucessPayload } = require('./createSucessPayload');
+const { createSuccessPayload } = require('./createSuccessPayload');
 
 function createServer() {
   const server = http.createServer((req, res) => {
@@ -15,7 +15,7 @@ function createServer() {
     if (urlValidation.correct) {
       respondWithSuccess(res, req.url);
     } else {
-      responWithError(res, urlValidation.messages);
+      respondWithError(res, urlValidation.messages);
     }
   });
 
@@ -26,12 +26,12 @@ function respondWithSuccess(res, url) {
   res.statusCode = 200;
   res.statusMessage = 'OK';
 
-  const payload = createSucessPayload(url);
+  const payload = createSuccessPayload(url);
 
   res.end(JSON.stringify(payload));
 }
 
-function responWithError(res, messages) {
+function respondWithError(res, messages) {
   res.statusCode = 400;
   res.statusMessage = 'Bad request';
 
