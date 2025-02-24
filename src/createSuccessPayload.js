@@ -1,6 +1,6 @@
 const { convertToCase } = require('./convertToCase/convertToCase');
 
-function createSucessPayload(url) {
+function createSuccessPayload(url) {
   const BASE = 'http://localhost:5700';
 
   const normalizedUrl = new URL(url, BASE);
@@ -20,4 +20,4 @@ function createSucessPayload(url) {
   return payload;
 }
 
-module.exports = { createSucessPayload };
+module.exports = { createSuccessPayload };
